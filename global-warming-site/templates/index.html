@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Глобальное потепление</title>
+    <link rel="stylesheet" href="../static/style.css" />
+</head>
+<body>
+
+    <div class='container'>
+        <header>
+            <h1>Что такое глобальное потепление?</h1>
+            <p>
+                Глобальное потепление - это долгосрочное повышение средней температуры земной атмосферы и океанов.
+                Основная причина этого процесса - увеличение концентрации парниковых газов в атмосфере, что приводит к изменению климата.
+            </p>
+        </header>
+        <form method = "POST">
+            <button type = "submit" class = 'button'>Получить совет</button>
+        </form>
+        {% if advice %}
+        <div id="advice" class="advice-box">
+            <p>{{ advice }}</p>
+        </div>
+        {% endif %}
+        <script>
+            function showAdvice() {
+                var adviceBox = document.getElementById('advice');
+                adviceBox.style.display = (adviceBox.style.display === "none" || adviceBox.style.display === "") ? "block" : "none";
+            }
+        </script>
+        <img src = 'https://assets.nationbuilder.com/factnet/pages/3967/attachments/original/1507839215/10-climate-effects-EPA.png?1507839215'>
+</body>
+</html>
